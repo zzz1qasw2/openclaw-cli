@@ -6,12 +6,12 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name="openclaw-cli",
     version="0.4.0",
-    author="OpenClaw Team",
-    author_email="openclaw@example.com",
-    description="OpenClaw CLI - Agent-Native Interface for AI Assistants",
+    author="StephenX-777",
+    author_email="stephenx@example.com",
+    description="OpenClaw CLI - 通用文档 CLI 工具，支持 Markdown/Word/HTML/PDF 读写转换和工作流自动化",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/openclaw/openclaw-cli",
+    url="https://github.com/StephenX-777/openclaw-cli",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha",
