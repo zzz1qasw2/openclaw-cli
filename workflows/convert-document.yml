@@ -1,0 +1,30 @@
+name: 文档转换流水线
+description: 将 Word 文档转换为 Markdown 和 HTML 两种格式
+
+steps:
+  - name: 读取 Word 文档
+    action: openclaw doc read
+    params:
+      file: test.docx
+      json: true
+
+  - name: 转换为 Markdown
+    action: openclaw doc convert
+    params:
+      input: docx
+      output: markdown
+      file: test.docx
+      output-file: output.md
+
+  - name: 转换为 HTML
+    action: openclaw doc convert
+    params:
+      input: docx
+      output: html
+      file: test.docx
+      output-file: output.html
+
+  - name: 验证输出文件
+    action: shell
+    params:
+      command: ls -lh output.md output.html

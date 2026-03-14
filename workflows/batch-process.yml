@@ -1,0 +1,31 @@
+name: 批量文档处理
+description: 批量处理多个 Markdown 文件并生成汇总报告
+
+steps:
+  - name: 列出所有 Markdown 文件
+    action: shell
+    params:
+      command: ls *.md
+
+  - name: 统计文件数量
+    action: shell
+    params:
+      command: ls *.md | wc -l
+
+  - name: 批量提取元数据
+    action: openclaw agent batch-process
+    params:
+      files: "*.md"
+      map: extract_metadata.py
+      reduce: merge_metadata.py
+      output: metadata_report.md
+
+  - name: 生成汇总报告
+    action: shell
+    params:
+      command: cat metadata_report.md
+
+  - name: 清理临时文件
+    action: shell
+    params:
+      command: rm -f *.tmp

@@ -1,0 +1,16 @@
+# Core dependencies
+click>=8.0
+rich>=13.0
+pyyaml>=6.0
+
+# Document handlers
+python-docx>=0.8.10
+beautifulsoup4>=4.12.0
+pdfplumber>=0.10.0
+markdown>=3.4.0
+
+# Development dependencies (optional)
+# pytest>=7.0
+# pytest-cov>=4.0
+# black>=23.0
+# ruff>=0.1.0
